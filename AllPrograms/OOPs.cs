@@ -7,13 +7,18 @@ using System.IO;
 using CsvHelper;
 using System.Globalization;
 using System.Reflection.PortableExecutable;
+using NLog;
+
 
 namespace AllPrograms
 {
+
     public class OOPs
     {
+        private static readonly NLog.Logger Logger = LogManager.GetCurrentClassLogger();
         public OOPs() { }
-       public bool isEvenOdd(int num)
+        
+        public bool isEvenOdd(int num)
        {
             return num % 2 == 0;
        }
@@ -29,42 +34,65 @@ namespace AllPrograms
             conaditionaLoops loops = new conaditionaLoops();
             int fact = loops.factorial(num);
             Console.WriteLine($"Factorial of a given number is  {fact}");
+            Logger.Info($"Factorial of a given number is  {fact}");
 
         }
 
 
     }
-    public class calculator
+    public class Calculator :Icalc
     { 
-        public calculator() { }
-        public int add(int x, int y)
+        public Calculator() { }
+        public int Add(int x, int y)
         {
             return x + y;
         }
-        public int sub(int x, int y)
+
+        public double Add(int x, double y)
+        {
+            return x + y;
+        }
+        public int Sub(int x, int y)
         {
             return x - y;
         }
-        public float mult(float x, float y)
+        public double Sub(int x, double y)
+        {
+            return x - y;
+        }       
+
+        public double Mult(int x, double y)
         {
             return x * y;
         }
 
-        public float div(float x, float y)
+        public int Mult(int x, int y)
+        {
+            return x * y;
+        }
+
+        public double Div(double x, double y)
         {
             return x / y;
         }
+     
+        public void Display(string result, string message)
+        {
+           Console.WriteLine($"{message} of given numbers : {result}");
+        }
     }
-    public interface calc
+    public interface Icalc
     {
-        int add(int x, int y);
-        int sub(int x, int y);
-        float mult(float x, float y);
-        float div(float x, float y);
+        double Add(int x, double y);
+        double Sub(int x, double y);
+        double Mult(int x, double y);
+        double Div(double x, double y);
+        void Display(string result, string message);
     }
 
     public class Employee
     {
+        private static readonly NLog.Logger Logger = LogManager.GetCurrentClassLogger();
         public int EmpId { get; set; }
         public string EmpName { get; set; }
         public double Salary { get; set; }
@@ -90,7 +118,10 @@ namespace AllPrograms
             foreach (Employee employee in employees)
             {
                 Console.WriteLine($"{employee.EmpName.ToUpper()}  | {employee.Salary}");
+               Logger.Info($"{employee.EmpName.ToUpper()}  | {employee.Salary}");
+                
             }
+          
         }
 
 
