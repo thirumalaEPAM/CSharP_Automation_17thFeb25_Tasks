@@ -72,12 +72,25 @@ namespace AllPrograms
 
         public double Div(double x, double y)
         {
-            return x / y;
+            try
+            {
+                if (y == 0) throw new DivideByZeroException("Divide By Zero");
+                else return x / y;
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("General Exception: " + e.Message);
+                return -9.9999; // took the -9.9999 to handle the infinite value
+            }
+
         }
-     
+        
         public void Display(string result, string message)
         {
-           Console.WriteLine($"{message} of given numbers : {result}");
+            if (result != "-9.9999")
+            { 
+                Console.WriteLine($"{message} of given numbers : {result}");
+             }
         }
     }
     public interface Icalc

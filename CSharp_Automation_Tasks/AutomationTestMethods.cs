@@ -98,7 +98,8 @@ namespace CSharp_Automation_Tasks
             calculator.Display(calculator.Add(20, 23).ToString(), "Addition");
             calculator.Display(calculator.Sub(24, 23).ToString(), "Subtraction");
             calculator.Display(calculator.Mult(20, 2).ToString(), "Multiplication");
-            calculator.Display(calculator.Div(20, 4).ToString(), "Division");
+            calculator.Display(calculator.Div(50.1, 0).ToString(), "Division");           
+
         }
 
         /*Task Description : Create Calculator Instance and perform 4 Operations for numbers 10 and 20.5 and print results in console*/
@@ -108,7 +109,7 @@ namespace CSharp_Automation_Tasks
             icac.Display(icac.Add(10, 20.51).ToString(), "IAddition");
             icac.Display(icac.Sub(10, 20.5).ToString(), "ISubtraction");
             icac.Display(icac.Mult(10, 20.5).ToString(), "IMultiplication");
-            icac.Display(icac.Div(20.5, 10).ToString(), "IDivision");
+            icac.Display(icac.Div(20.5, 0).ToString(), "IDivision");
 
 
         }
