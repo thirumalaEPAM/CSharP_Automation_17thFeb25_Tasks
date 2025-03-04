@@ -31,21 +31,24 @@ namespace AllPrograms
     public class Access_Modofiers
     {
         private int myPrivateField =3;
-        protected int myProtectedField;
-        internal int myInternalField;
-        public int myPublicField;
+        protected int myProtectedField =2;
+        internal int myInternalField =5;
+        public int myPublicField = 12 ;
 
         private void MyPrivateMethod()
         {
-            myPublicField = 1;
-            myPrivateField = 10;
+            Console.WriteLine($" My Public Field value called from private method : {myPublicField}");
 
-            Console.WriteLine($" My Publicc Field value called it from private method : {myPublicField}");
-
-            Console.WriteLine($" My Private Field value : {myPrivateField}");
+            Console.WriteLine($" My Private Field accessing from private method : {myPrivateField}");
         }
        
-        
+        public void Calling_Private_Method()
+        {
+            MyPrivateMethod();
+
+            Console.WriteLine($" My Private Field accessing from public method : {myPrivateField}");
+
+        }
 
     }
 
@@ -53,12 +56,10 @@ namespace AllPrograms
     {
         public void MyProtectedMethod() 
         {
-            myPublicField = 2; 
-            myProtectedField = 15;
+           
+            Console.WriteLine($" My Public Field value called from derived class: {myPublicField}");
 
-            Console.WriteLine($" My Publicc Field value called it from derived method: {myPublicField}");
-
-            Console.WriteLine($"myProtectedField value is  : {myProtectedField}");
+            Console.WriteLine($"myProtectedField accessing from derived class  : {myProtectedField}");
 
             string code = @"
         using System;
@@ -76,7 +77,7 @@ namespace AllPrograms
                 MyClass obj = new MyClass();
                 Console.WriteLine(obj.myPrivateField); // CS0122: 'MyClass.myPrivateField' is inaccessible due to its protection level
                 Console.WriteLine(obj.myProtectedField);
-                Console.WriteLine(obj.myPublicField);
+                Console.WriteLine(obj.myPublicField});
             }
         }"; ;
 

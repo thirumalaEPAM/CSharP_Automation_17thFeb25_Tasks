@@ -22,6 +22,7 @@ namespace AllPrograms
         public static string balanceString = "({[]})";
         public static int N = 155;
         public static string text = "hello world hello";
+        public static string delimeter = "CSharp_Automation_Tasks";
 
 
     }

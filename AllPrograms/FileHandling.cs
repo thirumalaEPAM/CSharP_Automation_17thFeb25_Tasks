@@ -98,7 +98,8 @@ namespace AllPrograms
 
         public List<Student> read_data()
         {
-            string file_path = "C://Users//Thirumala_Rajolu//source//repos//CSharP_Automation_17thFeb25_Tasks//AllPrograms//student.csv";
+            string ditectoty_path = Directory.GetCurrentDirectory();
+            string file_path = $"{ditectoty_path.Split(new[] { Task_Constants.delimeter }, StringSplitOptions.None)[0]}//AllPrograms//student.csv";            
             List<Student> students = new List<Student>();
             using (var reader = new StreamReader(file_path))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))

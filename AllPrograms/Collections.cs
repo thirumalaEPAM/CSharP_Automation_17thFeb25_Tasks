@@ -51,31 +51,27 @@ namespace AllPrograms
         /// Problem involves checking if a string containing various types of parentheses (e.g., (), {}, []) is balanced
         /// </summary>
         /// <param name="list"></param>
-        public bool IsBalanced(string input)
+        public bool IsBalancedParenthesis(string inputString)
         {
-            // Define a stack to keep track of opening brackets
-            Stack<char> stack = new Stack<char>();
-
-            // Define a mapping of closing brackets to their corresponding opening brackets
+            
+            Stack<char> stack = new Stack<char>();          
             Dictionary<char, char> bracketPairs = new Dictionary<char, char>
         {
             { ')', '(' },
             { '}', '{' },
             { ']', '[' }
         };
-
-            // Iterate through each character in the input string
-            foreach (char c in input)
+            foreach (char c in inputString)
             {
-                // If it's an opening bracket, push it onto the stack
+               
                 if (bracketPairs.ContainsValue(c))
                 {
                     stack.Push(c);
                 }
-                // If it's a closing bracket, check if it matches the top of the stack
+               
                 else if (bracketPairs.ContainsKey(c))
                 {
-                    // If the stack is empty or the top doesn't match, it's unbalanced
+                    
                     if (stack.Count == 0 || stack.Pop() != bracketPairs[c])
                     {
                         return false;
@@ -83,7 +79,6 @@ namespace AllPrograms
                 }
             }
 
-            // If the stack is empty, all brackets are balanced
             return stack.Count == 0;
         }
 
@@ -207,6 +202,22 @@ namespace AllPrograms
             {
                 Monitor.Pulse(lockObject); // Wake up the processing thread to exit
             }
+        }
+
+        public void AllTasksExecution()
+        {
+           
+            ScheduleTask(() => Console.WriteLine("Task 1 is running"));
+            ScheduleTask(() => Console.WriteLine("Task 10 is running"));
+            ScheduleTask(() => Console.WriteLine("Task 20 is running"));
+            ScheduleTask(() => Console.WriteLine("Task 30 is running"));
+            ScheduleTask(() => Console.WriteLine("Task 5 is running"));
+            ScheduleTask(() => Console.WriteLine("Task 15 is running"));
+
+            Thread.Sleep(1000);
+
+            Stop();
+            Console.WriteLine("Scheduler stopped.");
         }
     }
 }

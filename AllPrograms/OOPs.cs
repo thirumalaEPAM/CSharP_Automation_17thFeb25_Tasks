@@ -26,7 +26,7 @@ namespace AllPrograms
         {
 
             string evenOdd = isEvenOdd(num) ? "Even" : "Odd";
-            Console.WriteLine($"The Given number is {evenOdd}");
+            Console.WriteLine($"The {num} number is {evenOdd}");
             
         }
         public void displayFactorial(int num)
@@ -99,7 +99,9 @@ namespace AllPrograms
 
         public List<Employee> read_data()
         {
-            string file_path = "C://Users//Thirumala_Rajolu//source//repos//CSharP_Automation_17thFeb25_Tasks//AllPrograms//data1.csv";
+            string currentDirectory = Directory.GetCurrentDirectory();            
+            string file_path = $"{currentDirectory.Split(new[] { Task_Constants.delimeter }, StringSplitOptions.None)[0]}//AllPrograms//data1.csv";
+            //string file_path = "C://Users//Thirumala_Rajolu//source//repos//CSharP_Automation_17thFeb25_Tasks//AllPrograms//data1.csv";
             List<Employee> employees = new List<Employee>();
             using (var reader = new StreamReader(file_path))
             using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))

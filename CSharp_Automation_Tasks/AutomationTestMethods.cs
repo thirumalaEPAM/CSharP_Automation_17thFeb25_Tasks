@@ -1,5 +1,6 @@
 ﻿using AllPrograms;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace CSharp_Automation_Tasks
 {
@@ -128,6 +129,13 @@ namespace CSharp_Automation_Tasks
 
         }
 
+        /*Print your name in upper case
+        Get the first character from your last name
+        User should be able to input first name and last name
+        Concatenate the first name and last name
+        Display the output
+        Display the output
+         */
 
         [TestMethod]
         public void Task3_Strings()
@@ -143,6 +151,53 @@ namespace CSharp_Automation_Tasks
 
         }
 
+        /*Remove duplicates from an ArrayList list = new ArrayList() { 1, 2, 2, 3, 4, 4, 5 };
+          Counting Frequencies of Elements in string text = "hello world hello";
+          Problem involves checking if a string containing various types of parentheses (e.g., (), {}, []) is balanced            
+          Find the first repeating number while traversing from left to right in {1,2,3,4,3,5,6,2,7,8,1,0,9,1}
+        */
+
+        [TestMethod]
+        public void Task4_Collections()
+        {
+            var uniqueList = collections.RemoveDuplicates(Task_Constants.list);
+
+            collections.DispalyResults(uniqueList, "After removed the duplicates from ArrayList { 1, 2, 2, 3, 4, 4, 5 }");
+
+            var charCount = collections.CharCountFromText(Task_Constants.text);
+            collections.DispalyResults(charCount, $"Counting Frequencies of Elements in string text = {Task_Constants.text} is : ");
+
+            var IsBalancedParenthesis = collections.IsBalancedParenthesis(Task_Constants.balanceString);
+            collections.DispalyResults(IsBalancedParenthesis, Task_Constants.balanceString);
+
+            var firstRepeatingNum = collections.FindFirstRepeatingNumber(Task_Constants.number);
+            collections.DispalyResults(firstRepeatingNum, "Find the first repeating number while traversing from left to right in {1,2,3,4,3,5,6,2,7,8,1,0,9,1} is: ");
+
+        }
+
+
+        /*Create a task scheduling system where tasks are processed in the order they arrive.
+         */
+
+        [TestMethod]
+        public void Task4_Collections_Queues()
+        {
+            taskScheduler.AllTasksExecution();
+        }
+
+        /*Create a class Shield with two private fields: string _identifier and int _power. Add a parameterless public constructor to the class Shield that assigns 10 to _power and "Default" to _identifier.
+         * 1. output : "Access denied". You are allowed to change no more than two access modifiers.
+            2. output : "Access granted". You are allowed to change no more than two access modifiers, and in addition, you cannot change anything inside the Main method.
+         */
+        [TestMethod]
+        public void Task5_access_modifiers()
+        {
+            accessModifiers.Display();
+            access_modofiers.Calling_Private_Method();
+            derivedClass.MyProtectedMethod();
+
+        }
+
         /*
          * You are assigned to develop a project in which project manager wants following functionality.
         Create Student Folder in D drive using DirectoryInfo class.
@@ -154,67 +209,11 @@ namespace CSharp_Automation_Tasks
          */
 
         [TestMethod]
-        public void Task5_FileHandling()
+        public void Task6_FileHandling()
         {
             fileHandling.CreateStundentDirectory();
 
-        }
-
-        /*Create a class Shield with two private fields: string _identifier and int _power. Add a parameterless public constructor to the class Shield that assigns 10 to _power and "Default" to _identifier.
-         * 1. output : "Access denied". You are allowed to change no more than two access modifiers.
-            2. output : "Access granted". You are allowed to change no more than two access modifiers, and in addition, you cannot change anything inside the Main method.
-         */
-        [TestMethod]
-        public void Task4_access_modifiers()
-        {
-            accessModifiers.Display();
-            derivedClass.MyProtectedMethod();
-
-        }
-      
-        /*Create a task scheduling system where tasks are processed in the order they arrive.
-         */
-
-        [TestMethod]
-        public void Task3_Collections_Queues()
-        {
-            taskScheduler.ScheduleTask(() => Console.WriteLine("Task 1 is running"));
-            taskScheduler.ScheduleTask(() => Console.WriteLine("Task 2 is running"));
-            taskScheduler.ScheduleTask(() => Console.WriteLine("Task 3 is running"));
-
-            // Wait for a while to let tasks execute
-            Thread.Sleep(1000);
-
-            // Stop the scheduler
-            taskScheduler.Stop();
-            Console.WriteLine("Scheduler stopped.");
-
-        }
-
-        /*Remove duplicates from an ArrayList list = new ArrayList() { 1, 2, 2, 3, 4, 4, 5 };
-          Counting Frequencies of Elements in string text = "hello world hello";
-          Problem involves checking if a string containing various types of parentheses (e.g., (), {}, []) is balanced            
-          Find the first repeating number while traversing from left to right in {1,2,3,4,3,5,6,2,7,8,1,0,9,1}
-        */
-
-        [TestMethod]
-        public void Task3_Collections()
-        {
-           var uniqueList =  collections.RemoveDuplicates(Task_Constants.list);
-            
-            collections.DispalyResults(uniqueList, "After removed the duplicates from ArrayList { 1, 2, 2, 3, 4, 4, 5 }");
-
-            var charCount = collections.CharCountFromText(Task_Constants.text);
-            collections.DispalyResults(charCount, $"Counting Frequencies of Elements in string text = {Task_Constants.text} is : ");
-
-            var IsBalancedParenthesis = collections.IsBalanced(Task_Constants.balanceString);
-            collections.DispalyResults(IsBalancedParenthesis, Task_Constants.balanceString);
-
-            var firstRepeatingNum = collections.FindFirstRepeatingNumber(Task_Constants.number);
-            collections.DispalyResults(firstRepeatingNum, "Find the first repeating number while traversing from left to right in {1,2,3,4,3,5,6,2,7,8,1,0,9,1} is: ");
-            
-        }
-
+        }     
 
     }
 }
