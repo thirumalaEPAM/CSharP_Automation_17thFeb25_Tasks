@@ -8,7 +8,7 @@ namespace CSharp_Automation_Tasks
     [TestClass]
     public sealed class AutomationTestMethods
     {
-        conaditionaLoops loops;
+        ConaditionalLoops loops;
         OOPs oops;
         Employee employees;
         ArrayString arrayStrg;
@@ -25,7 +25,7 @@ namespace CSharp_Automation_Tasks
         [TestInitialize]
         public void initialize()
         {
-             loops = new conaditionaLoops();   
+             loops = new ConaditionalLoops();   
             oops = new OOPs();
             employees = new Employee();
             arrayStrg = new ArrayString();
@@ -50,10 +50,10 @@ namespace CSharp_Automation_Tasks
         {           
            
             List<string> names = new List<string>();           
-            loops.enterTeamatesName();
+            loops.EnterTeamatesName();
             names = loops.team_members;
-            string largeName = loops.get_largestName(names);
-            loops.display(largeName);
+            string largeName = loops.GetLargestName(names);
+            loops.Display(largeName);
 
         }
 
@@ -66,9 +66,9 @@ namespace CSharp_Automation_Tasks
         {
 
             /* Calculate the factorial of the given number*/
-            int factorial = loops.factorial(Task_Constants.fact);
-            loops.display(factorial.ToString());
-            loops.display_fibonacci(Task_Constants.fib);
+            int factorial = loops.FactorialOfGivenNumber(Task_Constants.fact);
+            loops.Display(factorial.ToString());
+            loops.DisplayFibonacciSeries(Task_Constants.fib);
 
             
         }
@@ -85,7 +85,7 @@ namespace CSharp_Automation_Tasks
         public void Task2_OOPS_employeeDetails()
         {
             /* Display Employee data */
-            employees.PrintSalary(employees.read_data());
+            employees.PrintSalary(employees.ReadCsvData());
 
         }
 

@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace AllPrograms
 {
-    public class conaditionaLoops
+    public class ConaditionalLoops
     {
         public List<string> team_members= new List<string>();
        
-        public void enterTeamatesName()
+        public void EnterTeamatesName()
         {
             for (int i = 0; i < Task_Constants.totalTeam; i++)
             {
@@ -22,7 +22,7 @@ namespace AllPrograms
 
         }
 
-        public string get_largestName(List<string> names)
+        public string GetLargestName(List<string> names)
         {
             string bigName = null;
             for (int i = 0;i < names.Count;i++)
@@ -46,37 +46,37 @@ namespace AllPrograms
 
         }
 
-        public int factorial(int n)
+        public int FactorialOfGivenNumber(int n)
         {
             int fact = 0;
             if (n == 0) return 1;
             else if (n == 1) return 1;
             else
             {
-               return n*factorial(n-1);
+               return n*FactorialOfGivenNumber(n-1);
             }          
         
         }
 
-        public int fibonacii(int n)
+        public int FibonacciOfGivenNumber(int n)
         {
             if (n <=1) return n;
-            return fibonacii(n-1) + fibonacii(n-2);
+            return FibonacciOfGivenNumber(n-1) + FibonacciOfGivenNumber(n-2);
 
         }
-        public void display_fibonacci(int n)
+        public void DisplayFibonacciSeries(int n)
         {
-            Console.WriteLine($"Fibonacci Series for the given number {Task_Constants.fib} ");
+            Console.WriteLine($"Fibonacci Series for the given number {n} ");
             List<string> list_fib = new List<string>();
             for (int i = 0; i < n; i++)
             {                
-                Console.Write($" {fibonacii(i)}  ");
+                Console.Write($" {FibonacciOfGivenNumber(i)}  ");
             }
         
         }
 
 
-        public void display(string name)
+        public void Display(string name)
         { 
             Console.WriteLine($"result: {name}");
         }

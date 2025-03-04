@@ -21,7 +21,7 @@ namespace AllPrograms
 
             string DirectoryPath = Path.Combine(folderpath, dirName);
             var student = new Student();
-            var studet_data = student.read_data();
+            var studet_data = student.ReadCsvData();
 
             // Create the directory if it doesn't exist
             if (!Directory.Exists(DirectoryPath))
@@ -96,7 +96,7 @@ namespace AllPrograms
         public string Father { get; set; }
         public string Grade { get; set; }
 
-        public List<Student> read_data()
+        public List<Student> ReadCsvData()
         {
             string ditectoty_path = Directory.GetCurrentDirectory();
             string file_path = $"{ditectoty_path.Split(new[] { Task_Constants.delimeter }, StringSplitOptions.None)[0]}//AllPrograms//student.csv";            

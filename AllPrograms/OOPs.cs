@@ -31,8 +31,8 @@ namespace AllPrograms
         }
         public void displayFactorial(int num)
         {
-            conaditionaLoops loops = new conaditionaLoops();
-            int fact = loops.factorial(num);
+            ConaditionalLoops loops = new ConaditionalLoops();
+            int fact = loops.FactorialOfGivenNumber(num);
             Console.WriteLine($"Factorial of a given number is  {fact}");
             Logger.Info($"Factorial of a given number is  {fact}");
 
@@ -97,7 +97,7 @@ namespace AllPrograms
         public string EmpName { get; set; }
         public double Salary { get; set; }
 
-        public List<Employee> read_data()
+        public List<Employee> ReadCsvData()
         {
             string currentDirectory = Directory.GetCurrentDirectory();            
             string file_path = $"{currentDirectory.Split(new[] { Task_Constants.delimeter }, StringSplitOptions.None)[0]}//AllPrograms//data1.csv";
