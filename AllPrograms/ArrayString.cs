@@ -25,7 +25,7 @@ namespace AllPrograms
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
-        public string get_firstLetter_from_Lastname(string name)
+        public string GetFirstLetterFromLastname(string name)
         {
             string lastName = name.Split(' ')[1];
             char firstLetter = lastName.ToCharArray()[0];

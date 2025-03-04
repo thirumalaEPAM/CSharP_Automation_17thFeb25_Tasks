@@ -15,21 +15,20 @@ namespace AllPrograms
 
     public class OOPs
     {
-        private static readonly NLog.Logger Logger = LogManager.GetCurrentClassLogger();
-        public OOPs() { }
+        private static readonly NLog.Logger Logger = LogManager.GetCurrentClassLogger();        
         
-        public bool isEvenOdd(int num)
+        public bool IsEvenOdd(int num)
        {
             return num % 2 == 0;
        }
-        public void displayEvenOdd(int num)
+        public void DisplayEvenOdd(int num)
         {
 
-            string evenOdd = isEvenOdd(num) ? "Even" : "Odd";
+            string evenOdd = IsEvenOdd(num) ? "Even" : "Odd";
             Console.WriteLine($"The {num} number is {evenOdd}");
             
         }
-        public void displayFactorial(int num)
+        public void DisplayFactorial(int num)
         {
             ConaditionalLoops loops = new ConaditionalLoops();
             int fact = loops.FactorialOfGivenNumber(num);

@@ -117,7 +117,7 @@ namespace CSharp_Automation_Tasks
         public void Task2_OOPS_EvenOrOdd()
         {
 
-            oops.displayEvenOdd(Task_Constants.N);
+            oops.DisplayEvenOdd(Task_Constants.N);
 
         }
 
@@ -125,7 +125,7 @@ namespace CSharp_Automation_Tasks
         [TestMethod]
         public void Task2_OOPS_FactorialOfGivenNumberN()
         {
-            oops.displayFactorial(Task_Constants.fact);
+            oops.DisplayFactorial(Task_Constants.fact);
 
         }
 
@@ -144,7 +144,7 @@ namespace CSharp_Automation_Tasks
             string fullName = arrayStrg.Concat_FirstName_LastName(Task_Constants.firstName, Task_Constants.LastName);
             arrayStrg.Display(fullName, $"Concatname firstName: {Task_Constants.firstName} and LastName: {Task_Constants.LastName}");
 
-            string firstLetter = arrayStrg.get_firstLetter_from_Lastname(Task_Constants.Myname);
+            string firstLetter = arrayStrg.GetFirstLetterFromLastname(Task_Constants.Myname);
             arrayStrg.Display(firstLetter, $"Get the first letter from LastName of  {Task_Constants.Myname} is ");
 
             arrayStrg.DisplyUserNameInUpperCase(Task_Constants.Myname);
